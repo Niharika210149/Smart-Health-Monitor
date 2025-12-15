@@ -1,76 +1,61 @@
-🩺 Smart Health Monitor
+# 🩺 Smart Health Analyzer – Portable AI-Enabled Health Monitoring System 🤖❤️
 
-Portable IoT-based vital signs monitoring system using the Seeed XIAO ESP32-C3. It measures Heart Rate, SpO₂, Temperature, and detects falls in real time. Features include on-device alerts, OLED UI, Wi-Fi connectivity, and a Flask dashboard for remote monitoring.
+## 🔍 Project Overview
 
-⚡ Features
-Real-time HR & SpO₂ monitoring (MAX30102)
+Smart Health Analyzer is a **portable, IoT-enabled vital signs monitoring system** designed to measure **heart rate, SpO₂, temperature*, and detect falls** in real time.  
+Powered by the **Seeed Studio XIAO ESP32-C3**, it integrates biomedical sensors with on-device signal processing, emergency alerts, and Wi-Fi-based remote monitoring.
 
-Fall detection using MPU-6050
+\*Temperature optional based on sensor setup.
 
-(Optional) Non-contact temperature measurement (MLX90614)
+---
 
-OLED display for live vitals
+## 🧠 Core Functionalities
 
-Buzzer-based emergency alerts
+### ❤️ Real-Time Vital Monitoring
+- Measures **Heart Rate** and **SpO₂** using MAX30102.
+- Optional **non-contact temperature sensing** using MLX90614.
+- Signal filtering reduces noise and motion artifacts for stable readings.
 
-Wi-Fi–enabled data upload (HTTP/MQTT)
+### 🛡️ Fall & Motion Detection
+- Uses **MPU6050 accelerometer + gyroscope** to detect:
+  - Falls
+  - Sudden impacts
+  - Abnormal inactivity
+- Threshold- and orientation-based logic for reliable alerts.
 
-Flask dashboard for graphs, logs & remote monitoring
+### 📟 On-Device Alerts & Display
+- **OLED display** shows live vitals.
+- **Buzzer alerts** for abnormal HR/SpO₂ levels or fall detection.
+- Fully functional even without internet.
 
-Local CSV logging for offline analysis
+### 🛰️ IoT Connectivity & Dashboard
+- Built-in **Wi-Fi** uploads data to a Flask dashboard.
+- Dashboard features:
+  - Real-time charts for HR, SpO₂, motion
+  - Timestamped alert logs
+  - Basic user interface for remote monitoring
 
+### 📊 Data Logging
+- Logs data in **CSV format** for long-term tracking or ML training.
+- Useful for anomaly detection, predictive analysis, and research.
 
-🧠 System Architecture
-On-device processing includes:
+---
 
-Band-pass filtering & peak detection for HR
+## ⚙️ Hardware Components
 
-Ratio-of-ratios method for SpO₂
+| Component                 | Purpose                                      |
+|---------------------------|----------------------------------------------|
+| Seeed XIAO ESP32-C3       | Main MCU, Wi-Fi communication                |
+| MAX30102                  | Heart rate & SpO₂ measurement                |
+| MPU-6050                  | Fall detection, motion tracking              |
+| MLX90614 (optional)       | Temperature measurement                      |
+| SSD1306 OLED (128×64)     | Real-time vitals display                     |
+| Buzzer                    | Alerts for abnormal conditions               |
+| Li-ion Battery Pack       | Portable power supply                        |
+| I2C Bus (SDA/SCL)         | Sensor communication                         |
+| Breadboard, wires         | Prototype assembly                           |
 
-Acceleration + orientation threshold logic for falls
+---
 
-Rule-based decision system with hysteresis for alert stability
+## 📁 Project Structure
 
-
-🔧 Hardware Used
-
-Seeed Studio XIAO ESP32-C3
-
-MAX30102 Pulse Oximeter
-
-MPU-6050 Accelerometer + Gyroscope
-
-MLX90614 (optional)
-
-SSD1306 OLED (128×64)
-
-Buzzer
-
-Li-ion battery pack
-
-
-🛠️ Software Stack
-
-Firmware: C/C++ (Arduino IDE)
-
-Sensor drivers
-
-Signal processing & validation
-
-Event detection
-
-Wi-Fi handling
-
-OLED UI
-
-CSV logging
-
-Backend: Flask + SQLite
-
-REST API for uploads
-
-Real-time vitals display
-
-Historical graphs (Chart.js)
-
-Alert logs
