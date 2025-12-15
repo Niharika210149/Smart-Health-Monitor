@@ -1,4 +1,4 @@
-# 🩺 Smart Health Analyzer – Portable AI-Enabled Health Monitoring System 🤖❤️
+# 🩺 Smart Health Monitor – Portable AI-Enabled Health Monitoring System 🤖❤️
 
 ## 🔍 Project Overview
 
